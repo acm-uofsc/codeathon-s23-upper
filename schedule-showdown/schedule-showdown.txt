@@ -1,0 +1,8 @@
+Schedule Showdown (bad name)
+
+ - You are an executive assistant. One of the things you have to do every morning is plan out your boss' schedule of meetings for the day.
+ - Your boss always schedules meetings on each other, so you have to go through them every morning and reschedule conflicting meetings.
+ - Your boss wants to get through as many meetings as possible every day, so you need to make sure you cancel the least number of meetings possible.
+ - You want to automate this process so you don't have to spend so long doing it every day. 
+
+Given the meeting participant's name, its start time, and its duration, print the names of the meetings you will have to reschedule. 
