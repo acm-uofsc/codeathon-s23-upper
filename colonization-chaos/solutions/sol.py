@@ -1,21 +1,11 @@
-def subset_sum(nums, target):
-    n = len(nums)
-    dp = [False for j in range(abs(target) + 1)]
-    dp[0] = True
-    for i in range(1, n + 1):
-        for j in range(abs(target), 0, -1):
-            if nums[i - 1] <= j and j - nums[i - 1] >= 0:
-                dp[j] = dp[j] or dp[j - nums[i - 1]]
-    return dp[abs(target)]
+n, m = map(int, input().split())
+resources = [int(x) for x in input().split()]
+planets = [int(x) for x in input().split()]
 
-
-
-len_nums, len_targets = list(map(int, input().split(' ')))
-nums = list(map(int, input().split(' ')))
-targets = list(map(int, input().split(' ')))
-
-assert len(nums) == len_nums
-assert len(targets) == len_targets
-
-results = [subset_sum(nums, target) for target in targets]
-print(sum(results))
+dp = {0}
+highest_in_planets = max(planets)
+for value in resources:
+    for existing in list(dp):
+        if existing + value <= highest_in_planets:
+            dp.add(existing + value)
+print(sum(total in dp for total in planets))

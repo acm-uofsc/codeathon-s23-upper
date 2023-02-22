@@ -10,7 +10,7 @@ def generate_nums_and_targets(n, target_count, max_num, num_valid):
             subset_len = randint(1, n)
             targets.append(sum(sample(nums, subset_len)))
             continue
-        target = randint(1, 2 * sum(nums))
+        target = randint(1, 10 * max_num)
         targets.append(target)
 
     return nums, targets
@@ -32,7 +32,7 @@ else:
     # output what should be read in as input by
     # contestant code
     n = randint(10, 100)
-    j = randint(1, 10)
+    j = randint(1, 100)
     max_num = 10000
     num_valid = randint(0, j)
     print(n, j)
