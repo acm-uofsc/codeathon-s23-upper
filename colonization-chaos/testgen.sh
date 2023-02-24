@@ -1,7 +1,8 @@
+#!/bin/bash
 #On windows, you can use the linux subsystem, then run testgen.sh
 
 #first use dos2unix testgen.sh to get rid of windows characters
-
+set -e
 #remove existing input and output
 [[ -e input/ ]] && rm -r input/ 
 [[ -e output/ ]] && rm -r output/ 
@@ -15,7 +16,7 @@ mkdir -p output
 for i in {2..50}
 do
   echo $i | python3 ./mkin.py > input/input$i.txt
-  python3 ./solutions/sol.py < input/input$i.txt > output/output$i.txt
+  python3 ./solutions/colters_faster_sol.py < input/input$i.txt > output/output$i.txt
 
   echo $i
 done
