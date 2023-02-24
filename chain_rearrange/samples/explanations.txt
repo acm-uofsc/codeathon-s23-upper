@@ -1,0 +1,27 @@
+here is the chain after each step (with the left side touching the ceiling)
+
+	1 2 3 4 5 6 7 8 9 10 11 12
+    9 1 2 3 4 5 6 7 8 10 11 12
+    5 6 7 8 9 1 2 3 4 10 11 12
+    10 11 12 5 6 7 8 9 1 2 3 4
+
+After the last move, the last 5 links are `9 1 2 3 4`, hence this is printed.
+
+
+
+
+
+
+
+This is the first chain after each move (top line is initial configuration)
+
+
+    1 2 3 4 5 6 7 8 9 10
+    1 2 3 7 8 9 10 4 5 6
+    1 2 7 8 9 10 3 4 5 6
+
+    1 2 3 4 5 6 7
+    7 1 2 3 4 5 6
+    3 7 1 2 4 5 6
+    3 1 2 4 5 7 6
+
