@@ -17,7 +17,7 @@ sys.setrecursionlimit(1000000)
 
 
 def dfs(x, y, path_length=0, cur_path_seen=None):
-    '''returns how many tiles were reachable from this (x, y), and if the path hit itself'''
+    '''returns how many tiles were reachable from this (x, y)'''
     if cur_path_seen is None:
         cur_path_seen = {}
     cur_pos = (y, x)
@@ -41,5 +41,9 @@ def dfs(x, y, path_length=0, cur_path_seen=None):
 for y in range(y_dim):    
     for x in range(x_dim):    
         dfs(x, y)
+for y in range(y_dim):
+    for x in range(x_dim):
+        print(ever_seen[y, x], end='\t')
+    print()
 print(max(ever_seen.values()))
 
