@@ -1,5 +1,1 @@
-<<<<<<< Updated upstream
-15
-=======
-8283
->>>>>>> Stashed changes
+8192

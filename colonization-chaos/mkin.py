@@ -11,7 +11,7 @@ def generate_nums_and_targets(n, target_count, max_num, num_valid, nums=None):
             subset_len = randint(1, n)
             targets.append(sum(sample(nums, subset_len)))
             continue
-        target = randint(1, 10 * max_num)
+        target = randint(1, 2 * sum(nums))
         targets.append(target)
 
     return nums, targets
@@ -34,16 +34,6 @@ elif case_num == 1:
 else:
     # output what should be read in as input by
     # contestant code
-<<<<<<< Updated upstream
-    n = randint(10, 100)
-    j = randint(1, 100)
-    max_num = 10000
-    num_valid = randint(0, j)
-    print(n, j)
-    nums, targets = generate_nums_and_targets(n, j, max_num, num_valid)
-    print(*nums)
-    print(*targets)
-=======
     if case_num > cache_cutoff:
         n = 60
     else:
@@ -62,12 +52,13 @@ else:
         # n_i = [randint(3000, 10_000) for _ in range(n)]
     def get_goals(goal_lo, goal_hi, n_i, goal_count):
         ret = []
-        for i in range(1, goal_count):
+        for i in range(1, goal_count//2):
             total = sum(sample(n_i, min(i, len(n_i)))) + randint(0, 4)
-            if total in range(goal_lo, goal_hi + 1) and len(ret) < goal_count - 5:
+            if total in range(goal_lo, goal_hi + 1):
                 ret.append(total)
-            else:
-                ret.append(randint(0, goal_hi))
+            # else:
+        while len(ret) < goal_count:
+            ret.append(randint(0, goal_hi))
         return ret
 
 
@@ -93,8 +84,9 @@ else:
     print(n, goal_count)
     print(*n_i)
     print(*goals)
+    import sys
+    print("genned_output", file=sys.stderr)
     # print(n, j)
     # nums, targets = generate_nums_and_targets(n, j, max_num, num_valid)
     # print(*nums)
     # print(*targets)
->>>>>>> Stashed changes
